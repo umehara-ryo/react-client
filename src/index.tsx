@@ -7,7 +7,9 @@ import Hello from "./pages/Hello";
 import P1 from "./pages/P1";
 import P2 from "./pages/P2";
 
-const stu = {id : 1,name : "umehara", sex : "男",age : 20};
+const stu1 = {id : 1,name : "umehara", sex : "男",age : 20};
+const stu2 = {id : 1,name : "umehara", sex : "男",age : 20};
+const students = [stu1,stu2];
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -16,8 +18,8 @@ root.render(
   <React.StrictMode>
       <Hello msg={"七瀬最高"} age={1}/>
       <Hello msg={"七瀬最高"}/>
-      <P1 student={stu}></P1>
-      <P2></P2>
+      <P1 student={stu1}></P1>
+      <P2　students={students}></P2>
   </React.StrictMode>
 );
 
