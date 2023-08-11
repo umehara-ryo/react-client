@@ -1,12 +1,6 @@
 
 
-interface Student{
-    id : number;
-    name : string;
-    age : number;
-    sex : string;
-}
-
+import Student from "../model/Student";
 
 export default function P1({student} : {student : Student}){
 
