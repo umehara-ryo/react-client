@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Hello from "./pages/Hello";
 import P1 from "./pages/P1";
+import P2 from "./pages/P2";
 
 const stu = {id : 1,name : "umehara", sex : "男",age : 20};
 
@@ -16,6 +17,7 @@ root.render(
       <Hello msg={"七瀬最高"} age={1}/>
       <Hello msg={"七瀬最高"}/>
       <P1 student={stu}></P1>
+      <P2></P2>
   </React.StrictMode>
 );
 
