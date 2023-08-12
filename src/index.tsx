@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import Hello from "./pages/Hello";
 import P1 from "./pages/P1";
 import P2 from "./pages/P2";
+import P3 from "./pages/P3";
 
 const stu1 = {id : 1,name : "umehara", sex : "男",age : 20};
 const stu2 = {id : 1,name : "umehara", sex : "男",age : 20};
@@ -18,8 +19,9 @@ root.render(
   <React.StrictMode>
       <Hello msg={"七瀬最高"} age={1}/>
       <Hello msg={"七瀬最高"}/>
-      <P1 student={stu1}></P1>
-      <P2　students={students}></P2>
+      <P1 student={stu1}></P1>d
+      <P2　students={students} hideAge={true}></P2>
+
   </React.StrictMode>
 );
 
