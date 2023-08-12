@@ -1,10 +1,14 @@
 import Student from "../model/Student";
-import {useEffect, useState} from "react";
+import {createContext, useContext, useEffect, useState} from "react";
 import axios from "axios";
+
+const HiddenContext = createContext(false);
+
 
 export default function P7() {
     const [students,setStudents] = useState([]);
 
+    const [hidden,setHidden] = useState(false);
     useEffect(()=>{
         async function updateStudent(){
             const resp = await axios.get("");
@@ -13,7 +17,20 @@ export default function P7() {
         }
         updateStudent();
     },[])
-    return <P7a students={students}></P7a>
+
+    function hide() {
+
+        setHidden((old)=> !old);
+        
+    }
+
+
+    return <HiddenContext.Provider value={hidden}>
+        <input type="button" value={hidden?"示す":"隠す"}　onClick={hide}/>
+        {/*<input type="button" value="示す"onClick={show}/>*/}
+        <P7a students={students}></P7a>
+    </HiddenContext.Provider>
+
 
 }
 
@@ -25,6 +42,13 @@ function P7a({students}: { students: Student[] }) {
 }
 
 function P7b({student}: { student: Student }) {
-    return <div>{student.name} {student.age}</div>
+
+    const hidden = useContext(HiddenContext);
+    if(hidden){
+        var jsx = <span></span>
+    }else {
+        var jsx = <span>{student.age}</span>
+    }
+    return <div>{student.name} {jsx}</div>
 
 }
